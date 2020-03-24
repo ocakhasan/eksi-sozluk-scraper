@@ -2,7 +2,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import pandas
 
-class EksıSozlukScraper:
+class EksiSozlukScraper:
     url = "https://eksisozluk.com/"
     uClient = urlopen(url)
     page_html = uClient.read()
@@ -101,9 +101,9 @@ class EksıSozlukScraper:
 
 
 def main():
-    eksıWrapper = EksıSozlukScraper()
-    titles = eksıWrapper.getPopularHeadLines()
-    df = eksıWrapper.getDataFromURL("https://eksisozluk.com/besiktas-covid-19-testlerinin-negatif-cikmasi--6433522")
+    eksiScraper = EksiSozlukScraper()
+    titles = eksiScraper.getPopularHeadLines()
+    df = eksiScraper.getDataFromURL("https://eksisozluk.com/besiktas-covid-19-testlerinin-negatif-cikmasi--6433522")
     #print(df.head())
     #print(titles.head())
 
