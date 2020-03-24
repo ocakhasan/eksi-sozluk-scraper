@@ -17,5 +17,7 @@ EksıSozlukWrapper.getDataFromURL(url)
 Functions will create a csv file which you can use another time.
 Functions also returning the dataframe.
 
+You can check the formats of the csv file by the 2 examples I created.
+
 
 I will add another functions.
