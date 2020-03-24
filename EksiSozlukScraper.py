@@ -25,11 +25,21 @@ class EksiSozlukScraper:
         """
         result = []
         containers = self.page_soup.find("ul", {"class": "topic-list partial"}).find_all("li")
-
-        for a in containers:
-            text = a.get_text(strip=True)
-            if text != "":
-                result.append(text)
+        
+        
+        for item in containers:
+            
+            if item is not None:
+                
+                a = item.find("a")
+                small = item.find("small")
+                if a is not None and small is not None:
+                    text= a.get_text()
+                    number = small.get_text()
+                    text = text[:-len(number):]
+                    print(text)  
+                    result.append(text)              #print(number)
+                
 
         df = pandas.DataFrame()
 
