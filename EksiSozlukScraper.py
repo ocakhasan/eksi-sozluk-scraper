@@ -37,8 +37,7 @@ class EksiSozlukScraper:
                     text= a.get_text()
                     number = small.get_text()
                     text = text[:-len(number):]
-                    print(text)  
-                    result.append(text)              #print(number)
+                    result.append(text)              
                 
 
         df = pandas.DataFrame()
