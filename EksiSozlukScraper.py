@@ -3,14 +3,6 @@ from bs4 import BeautifulSoup
 import pandas
 
 class EksiSozlukScraper:
-    url = "https://eksisozluk.com/"
-    uClient = urlopen(url)
-    page_html = uClient.read()
-    uClient.close()
-    page_soup = BeautifulSoup(page_html, "html.parser")
-    
-    
-        
     
     def getPopularHeadLines(self):
 
@@ -23,8 +15,14 @@ class EksiSozlukScraper:
         Titles of Ekşi Sözlük
 
         """
+
+        url = "https://eksisozluk.com/"
+        uClient = urlopen(url)
+        page_html = uClient.read()
+        uClient.close()
+        page_soup = BeautifulSoup(page_html, "html.parser")
         result = []
-        containers = self.page_soup.find("ul", {"class": "topic-list partial"}).find_all("li")
+        containers = page_soup.find("ul", {"class": "topic-list partial"}).find_all("li")
         
         
         for item in containers:
@@ -101,12 +99,6 @@ class EksiSozlukScraper:
 
         return df
 
-    
-    
-
-
-    
-    
 
 
 def main():
