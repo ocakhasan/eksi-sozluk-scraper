@@ -42,7 +42,7 @@ class EksiSozlukScraper:
 
         df['title'] = result
 
-        df.to_csv("PopularHeadLines.csv")
+        df.to_csv("PopularHeadLines.csv", index=False, encoding="utf-8")
 
         return df
 
